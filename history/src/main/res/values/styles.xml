@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="KinHistoryBalanceTextSmall">
+        <item name="android:textSize">@dimen/kinecosystem_title_size</item>
+        <item name="android:textColor">@color/kinecosystem_primary</item>
+    </style>
+
+</resources>

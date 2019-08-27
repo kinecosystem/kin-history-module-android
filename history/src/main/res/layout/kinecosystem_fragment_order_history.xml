@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.kin.ecosystem.base.widget.KinEcosystemTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="My Kin"
+        android:textSize="@dimen/kinecosystem_title_medium_size"
+        app:fontExtra="medium"
+        android:layout_marginTop="@dimen/kinecosystem_main_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.kin.ecosystem.base.widget.KinEcosystemTextView
+        android:id="@+id/balance_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/kinecosystem_main_margin"
+        android:gravity="center"
+        android:text="Balance"
+        android:textSize="@dimen/kinecosystem_title_medium_size"
+        app:fontExtra="medium"
+        android:layout_marginLeft="@dimen/kinecosystem_main_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+
+
+    <TextSwitcher
+        android:id="@+id/balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:measureAllChildren="false"
+        app:layout_constraintTop_toTopOf="@id/balance_title"
+        app:layout_constraintBottom_toBottomOf="@id/balance_title"
+        android:layout_marginRight="@dimen/kinecosystem_main_margin"
+        app:layout_constraintRight_toRightOf="parent"
+        android:inAnimation="@anim/kinecosystem_slide_fade_from_top"
+        android:outAnimation="@anim/kinecosystem_slide_fade_to_bottom"/>
+
+
+    <org.kin.ecosystem.history.KinEcosystemTabs
+        android:id="@+id/order_history_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="@dimen/kinecosystem_main_margin"
+        android:layout_marginTop="@dimen/kinecosystem_main_margin"
+        android:layout_marginRight="@dimen/kinecosystem_main_margin"
+        android:layout_marginBottom="@dimen/kinecosystem_block_margin"
+        app:layout_constraintTop_toBottomOf="@id/balance_title"
+        app:leftTabText="Earned"
+        app:rightTabText="Used" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/earn_order_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_history_tabs"
+        app:layout_constraintVertical_bias="0" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/spend_order_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_history_tabs"
+        app:layout_constraintVertical_bias="0" />
+
+</android.support.constraint.ConstraintLayout>

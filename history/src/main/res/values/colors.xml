@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="kinecosystem_tab_deselected_text">#8c8c8c</color>
+    <color name="kinecosystem_tab_deselected_background_light">#e7e7e7</color>
+</resources>

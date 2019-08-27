@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "{$SDK_VERSION}"
+    }
+}
+
+dependencies {
+    //Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //View
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+
+    //Kin
+    implementation "com.github.kinecosystem.kin-ecosystem-android-sdk:base:$kinecosystem_sdk_version"
+    implementation "com.github.kinecosystem.kin-sdk-android:kin-base:$kin_sdk_version"
+    implementation "com.github.kinecosystem:kin-utils-android:$kin_utils_version"
+
+    debugImplementation("com.squareup.okhttp3:logging-interceptor:4.0.1")
+}
+
+repositories {
+    mavenCentral()
+}
